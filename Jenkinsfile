@@ -1,3 +1,4 @@
+env.Maven3.5.4 = '/opt/maven'
 pipeline {
 	agent any
 
