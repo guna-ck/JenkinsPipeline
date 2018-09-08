@@ -4,27 +4,26 @@ pipeline {
 	stages {
 	   stage ('Compile Stage') {
 		steps {
-		   withMaven(maven : 'MVN_HOME') {
-			sh 'mvn clean compile'
-		}
+		   
+			sh "'${MVN_HOME}/bin/mvn' clean compile"
+		
        	   }
 	}
 	
 	stage ('Testing Stage') {
 	  steps {
-		withMaven(maven: 'MVN_HOME') {
-		   sh 'mvn test'
-   		}
+		
+		   sh sh "'${MVN_HOME}/bin/mvn' clean test"
+   		
 	    }
 	}
 
 	stage ('Deploy Stage') {
 	  steps {
-		withMaven(maven: 'MVN_HOME') {
-		   sh 'mvn deploy'
-   		}
+		
+		   sh sh "'${MVN_HOME}/bin/mvn' clean deploy"
+   		
 	    }
 	}
     }
-}
- 
+ }
