@@ -13,7 +13,7 @@ pipeline {
 	stage ('Testing Stage') {
 	  steps {
 		
-		   sh sh "'${MVN_HOME}/bin/mvn' clean test"
+		    sh "'${MVN_HOME}/bin/mvn' clean test"
    		
 	    }
 	}
@@ -21,7 +21,7 @@ pipeline {
 	stage ('Deploy Stage') {
 	  steps {
 		
-		   sh sh "'${MVN_HOME}/bin/mvn' clean deploy"
+		    sh "'${MVN_HOME}/bin/mvn' clean deploy"
    		
 	    }
 	}
